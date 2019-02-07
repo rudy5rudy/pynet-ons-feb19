@@ -1,9 +1,53 @@
 
-Files Ex1
----------
-a. create a 3 line file
-b. Write a python program that reads this file and prints out the lines of the file
-c. write a python program that writes a different file
-d. close this new file and re-open it and append to it.
-e. Check your code into GitHub
+#Files Ex1
+#---------
+#a. create a 3 line file
+#b. Write a python program that reads this file and prints out the lines of the file
+#c. write a python program that writes a different file
+#d. close this new file and re-open it and append to it.
+#e. Check your code into GitHub
+
+# Read #
+f = open("my_file.txt")
+print("\nLoop direclty over file")
+print("-"*60)
+for line in f:
+    print(line.strip())
+print("-" * 60)
+
+f.seek(0)
+my_content = f.readiness()
+print("\nUse readlines method")
+print("-" * 60)
+for line in my content
+
+    print(line.strip())
+
+print("-" * 60)
+
+f.seek(0)
+my_content = f.read()
+print("\nUse read + splitlines")
+print("-" * 60)
+f.close()
+
+with open ("my_file.txt") as f:
+    print("\nUse with and loop over file")
+    print("-" * 60)
+    for line in F:
+        print(line.strip())
+    print("-" * 60)
+
+
+# Write###
+
+print("\nWriting file.")
+f = open("new_file.txt", "w")
+f.write("whatever2\n")
+f.close()
+
+#APPEND ####
+print("\nAppending File.")
+with open("new_file.txt", "a") as f:
+
 

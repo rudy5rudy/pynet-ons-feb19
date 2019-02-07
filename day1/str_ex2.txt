@@ -1,9 +1,28 @@
-Strings Ex2
------------
+#Strings Ex2
+#-----------
 
-Create a python script that prompts for an IP address.
-Use #! at top of file; make executable
-split on ‘.’      
-Print out four octets with column width of 12; left aligned.
-Check your code into github
+#Create a python script that prompts for an IP address.
+#Use #! at top of file; make executable
+#split on ‘.’      
+#Print out four octets with column width of 12; left aligned.
+#Check your code into github
+
+
+
+ #!/usr/bin/env python
+ from __future__ import print_function
+
+ try:
+ # PY2
+ ip_addr = raw_input("Please enter IP address: ")
+ except NameError:
+ # PY3
+ ip_addr = input("Please enter IP address: ")
+ 
+ip_addr = ip_addr.split(".")
+
+print()
+print("{:<12} {:<12} {:<12} {:<12}".format(*ip_addr))
+print()
+
 

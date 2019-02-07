@@ -1,0 +1,4 @@
+f = open("somefile.txt", "r")
+print_file = f.read()
+
+pen(

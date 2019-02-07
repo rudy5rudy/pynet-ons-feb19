@@ -1,10 +1,29 @@
 
-Show IP BGP Parsing (optional)
--------------------------------
+#Show IP BGP Parsing (optional)
+#-------------------------------
 
-Read the ‘show_ip_bgp.txt’ file.
+#Read the ‘show_ip_bgp.txt’ file.
 
-Strip out the header information so you are just left with the routes
-Parse each BGP line such that you retrieve the prefix and the as_path.
-Save the prefix and as_path to a file.
+#Strip out the header information so you are just left with the routes
+#Parse each BGP line such that you retrieve the prefix and the as_path.
+#Save the prefix and as_path to a file.
 
+filename = "show_ip_bgp.txt"
+
+with open(filename, "r") as f:
+    bgp_table = f.read()
+
+field = bgp_table.split("Weight Path")
+bgp_table = field[1]
+
+for line in bgp_table.splitlines():
+    if not line.strip():
+        continue
+    field = line.split()
+    prefix = field[1]
+    as_path = field[5:-1]
+    as_path = " ".join(as_path)
+    print("{:30}{:50}".format(prefix, str(as_path)))
+    #print(as_path)
+    #print(repr(line))
+    #break
